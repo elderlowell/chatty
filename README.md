@@ -9,16 +9,16 @@ This project uses Node.js and Express to build a basic REST-based chat server. Y
 #### Step 1: Basic Setup
 1. Clone this project
 
-1. Run `npm init` to to create our `package.json`.
+2. Run `npm init` to to create our `package.json`.
 
-1. Install the packages we'll need — express and body-parser  
+3. Install the packages we'll need — express and body-parser  
   `npm install --save package-name`
 
-1. Require express and body-parser in `index.js`
+4. Require express and body-parser in `index.js`
 
-1. Initialize express and assign it the app variable `var app = express()`
+5. Initialize express and assign it the app variable `var app = express()`
 
-1. Start listening to a port using `app.listen(3000)`
+6. Start listening to a port using `app.listen(3000)`
 
 We need to send our client-side code (located in the assets folder) to the user when they go to our site. We'll also want express to automatically parse stringified JSON data coming in and assign it as a JS Object to `req.body`.
 
