@@ -77,3 +77,26 @@ body {
     border-bottom: 0;
   }
 }
+
+.history {
+}
+
+.message-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid lightgray !important;
+  padding: 5px;
+}
+
+.message {
+  flex: 4;
+  text-align: left;
+  font-size: 20px;
+}
+
+.timestamp {
+  flex: 1;
+  text-align: right;
+  /*font-size: 8px;*/
+}

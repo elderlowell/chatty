@@ -11,13 +11,13 @@ app.listen(port, function() {
   console.log('Listening on port ' + port + ".");
 });
 
-var messages = ["Hello."];
+var messages = [];
 
 app.get('/messages', function(req, res, next) {
   res.status(200).json({ messages: messages });
 });
 
 app.post('/messages', function(req, res, next) {
-  messages.push(req.body.message);
+  messages.push({ message: req.body.message, time: new Date() });
   res.status(200).json({ messages: messages });
 });
