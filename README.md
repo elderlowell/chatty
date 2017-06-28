@@ -33,14 +33,14 @@ We will discussing, in much more depth, how this works tomorrow!
 ### Step 2: Serving Messages
 1. Create an array for storing your messages temporarily. You could call the variable `messages`. Think about what scope this variable should be placed in. We need to be sure we keep our messages from previous requests or at least until our server is restarted.
 
-1. Write a new GET endpoint that returns our array of messages. It will look something like this:
+2. Write a new GET endpoint that returns our array of messages. It will look something like this:
   ```javascript
   app.get('/messages', function (req, res, next) {
     res.status(200).json({ messages: messages });
   });
   ```
 
-1. Test your server. Run it with `nodemon index.js` and use Postman to make a GET request to `/messages`. Add some default messages to the `messages` variable to make sure it is returning data the way you would expect.
+3. Test your server. Run it with `nodemon index.js` and use Postman to make a GET request to `/messages`. Add some default messages to the `messages` variable to make sure it is returning data the way you would expect.
 
 ### Step 3: Adding Messages
 Lets create our endpoint to POST a new message. This will be structured similarly to our GET endpoint. Let's start by logging `req.body`.
@@ -54,27 +54,27 @@ Let's test this out in Postman
 
 1. Select 'POST' from the request method dropdown next to your URL
 
-1. Set the Content-Type of the request
+2. Set the Content-Type of the request
   1. Select the 'Body' tab
-  1. Select the 'raw' radio button
-  1. Select 'JSON (application/json)' in the dropdown menu to the right of the radio buttons
+  2. Select the 'raw' radio button
+  3. Select 'JSON (application/json)' in the dropdown menu to the right of the radio buttons
 
-1. Add some JSON data to the text-area in this tab. Let's start with something like:
+3. Add some JSON data to the text-area in this tab. Let's start with something like:
   ```json
   {
     "message": "Wubba Dubba Lub Dub!"
   }
   ```
 
-1. Smash the 'Send' button!
+4. Smash the 'Send' button!
 
 Check to see that our `console.log(req.body)` code logged something to the terminal. It should look something like `{ message: 'Wubba Dubba Lub Dub!' }`. If you are getting errors, check the formatting of your JSON. It is important to use double quotes around both the key and the value.
 
 Brilliant. Let's finish up this endpoint.
 
-1. Add the message from `req.body` to our array of `messages`.
+5. Add the message from `req.body` to our array of `messages`.
 
-1. End the response using the `status` and `json` methods to send back that our full array of messages just like we did for the GET endpoint. It will look similar to this:
+6. End the response using the `status` and `json` methods to send back that our full array of messages just like we did for the GET endpoint. It will look similar to this:
   ```javascript
   app.post('/messages', function (req, res, next) {
     messages.push(req.body.message);
@@ -82,7 +82,7 @@ Brilliant. Let's finish up this endpoint.
   });
   ```
 
-1. Test this out again in Postman! You should get a response this time.
+7. Test this out again in Postman! You should get a response this time.
 
 ### Step 4: Test the client-side code
 Go to http://localhost:3000 in your browser. The app should be up and running!
